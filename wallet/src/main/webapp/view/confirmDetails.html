@@ -1,0 +1,42 @@
+<html>
+   <head>      
+  <link rel='stylesheet prefetch' href='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css'>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+<body ng-controller="placeOrderController">
+<div class="login">
+  <div class="login-header">
+    <h1>Confirm Details</h1>
+  </div>
+  <div class="login-form">
+    <h3>First Name:</h3>
+    <input type="text" placeholder="FirstName" id="firstName" value={{userDetail.firstName}} /><br>
+     <h3>Last Name:</h3> 
+    <input type="text" placeholder="LastName" id="lastName" value={{userDetail.lastName}} /><br>
+    <h3>Email:</h3>
+    <input type="text" placeholder="Email" id="email" value={{userDetail.emailAddress}} readonly/>
+    <!--  <label placeholder="Email" id="email">Male</label> -->
+    <h3>Mobile No.:</h3>
+    <input type="text" placeholder="Mobile No." id="mobileNo" value={{userDetail.mobileNumber}} />
+    <h3>Address:</h3>
+    <input type="text" placeholder="Address" id="address" value={{userDetail.address}} />
+    <h3>Postal Code:</h3>
+    <input type="text" placeholder="Postal Code" id="postalCode" value={{userDetail.postelCode}} />
+    <h3>Product Details:</h3>
+    <ul ng-repeat="data in productDetails">
+    <!-- <input type="text" placeholder="Products" id="productName" value={{data.product.productName}} readonly/>-->
+    <div>Name: {{data.product.productName}} Price: {{data.product.price}}</div>
+    </ul>
+    <!-- <h3>Quantity:</h3>
+    <input type="text" placeholder=max:-{{productQuantity}} id="productQuantity"  />
+    <h3>Price:</h3>
+    <input type="text" placeholder="productPrice" id="productPrice" value={{productPrice}} readonly/> -->
+    <h3>Total:</h3>
+    <input type="text" placeholder="TotalAmount" id="TotalAmount" value={{totalAmount}} readonly/>
+    <br>
+     <input type="button" value="Place Order" id="signUpButton" class="login-button" ng-click="placeOrder()">
+    <br>
+  </div>
+</div>
+</body>
+</html>

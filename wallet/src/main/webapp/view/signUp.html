@@ -1,0 +1,27 @@
+<html>
+   <head>      
+  <link rel='stylesheet prefetch' href='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css'>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+<body  ng-controller="signupCOntroller">
+<div class="login">
+  <div class="login-header">
+    <h1>Sign UP</h1>
+  </div>
+  <div class="login-form">
+    <h3>First Name:</h3>
+    <input type="text" placeholder="FirstName" id="firstName"/><br>
+     <h3>Last Name:</h3>
+    <input type="text" placeholder="LastName" id="lastName"/><br>
+    <h3>Email:</h3>
+    <input type="text" placeholder="Email" id="email"/>
+    <h3>Mobile No.:</h3>
+    <input type="text" placeholder="Mobile No." id="mobileNo"/>
+    <br>
+     <input type="button" value="Sign UP" id="signUpButton" class="login-button" ng-click="signUp()">
+      <input type="button" value="Cancel" id="cancel" class="login-button" ng-click="cancelBtn()">
+    <br>
+  </div>
+</div>
+</body>
+</html>

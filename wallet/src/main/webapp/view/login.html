@@ -1,0 +1,50 @@
+<html >
+<body>
+ <!-- <link href='http://fonts.googleapis.com/css?family=Ubuntu:500' rel='stylesheet' type='text/css'> -->
+<div class="login" ng-controller="loginController">
+  <div class="login-header">
+    <h1>Login</h1>
+  </div>
+  <div class="login-form">
+    <h3>Username:</h3>
+    <input type="text" placeholder="Username" id="email"/><br>
+    <h3>Password:</h3>
+    <input type="password" placeholder="Password" id="password"/>
+    <br>
+     <input type="button" value="Login" id="loginButton" class="login-button" ng-click="login()">
+     
+     <input type="button" value="Cancel" id="cancel" class="login-button" ng-click="cancelBtn()"> 
+    <!-- <button type="button" id="loginButton" value="Login"  name="prev"  class="login-button" ng-click="login()"></button> -->
+
+  <meta name="google-signin-client_id" content="{{google_client_id}}">
+  <div id="my-signin2" data-onsuccess="onSignIn"></div>
+  <script>
+    function onFailure(error) {
+      console.log(error);
+    }
+    function renderButton() {
+      gapi.signin2.render('my-signin2', {
+        'scope': 'profile email',
+        'width': 170,
+        'height': 30,
+        'longtitle': true,
+        'theme': 'dark',
+        'onsuccess': onSignIn,
+        'onfailure': onFailure
+      });
+    }
+  </script>
+  <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>  
+   
+    <br>
+    <a class="sign-up" href='javascript:void()' onClick='signUp()'>Sign Up! </a>
+    <br>
+    <h6 class="no-access" ng-click="gotoforgotPassword()">Can't access your account?</h6>
+  </div>
+</div>
+<div class="error-page">
+  <div class="try-again">Error: Try again?</div>
+</div>
+
+</body>
+</html>
