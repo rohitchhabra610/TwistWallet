@@ -149,7 +149,7 @@ twistWalletResponse.setUser(user);
 			mailUser.setUserActivationCode(genPassword);
 			request.setMailUser(mailUser);
 			
-			//userService.sendMail(request);
+			userService.sendMail(request);
 			twistWalletResponse.setResultCode(Response.SUCCESS.getResultCode());
 			twistWalletResponse.setResultDesc(Response.SUCCESS.getDesc());
 			return twistWalletResponse;

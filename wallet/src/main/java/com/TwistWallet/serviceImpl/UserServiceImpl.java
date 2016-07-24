@@ -101,10 +101,10 @@ public class UserServiceImpl implements UserService{
 		mailUser.setUserName("Rohit");
 		mailUser.setUserActivationCode("abcdefgh134@26");
 		request.setMailUser(mailUser);*/
-		if(request.getUser().getUserId()==4){
-			throw new Exception("4");
-			/*throw new CustomGenericException("E888", "This is custom message");*/
-			}
+	//	if(request.getUser().getUserId()==4){
+		//	throw new Exception("4");
+			///*throw new CustomGenericException("E888", "This is custom message");*/
+			//}
 		mailer.sendMail(request.getMailUser());
 		
 		return null;

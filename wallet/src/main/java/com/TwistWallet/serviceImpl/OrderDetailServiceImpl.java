@@ -36,7 +36,7 @@ public class OrderDetailServiceImpl implements OrderDetailService{
 	UserService userService;
 	
 	@Override
-	public TwistWalletResponse placeOrder(TwistWalletRequest request) {
+	public TwistWalletResponse placeOrder(TwistWalletRequest request) throws Exception {
 		TwistWalletResponse response = new TwistWalletResponse();
 		if(request.getOrderDetails().getUser() != null && 
 				request.getOrderDetails().getUser().getEmailAddress() != null &&
@@ -73,7 +73,7 @@ public class OrderDetailServiceImpl implements OrderDetailService{
 			mailUser.setTemplateName("TwistwalletOrderConfirmation.html");
 			mailUser.setUserName(user.getFirstName());
 			request.setMailUser(mailUser);
-			//userService.sendMail(request);
+			userService.sendMail(request);
 			
 			response.setResultCode(Response.SUCCESS.getResultCode());
 			response.setResultDesc(Response.SUCCESS.getDesc());

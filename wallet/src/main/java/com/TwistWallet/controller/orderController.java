@@ -19,7 +19,7 @@ public class orderController {
 	OrderDetailService orderDetailImpl;
 	
 	@RequestMapping(value="/placeOrder", method=RequestMethod.POST,consumes="application/json",produces="application/json")
-	public @ResponseBody TwistWalletResponse placeOrder(@RequestBody TwistWalletRequest request){
+	public @ResponseBody TwistWalletResponse placeOrder(@RequestBody TwistWalletRequest request) throws Exception{
 		return orderDetailImpl.placeOrder(request); 
 	}
 	
